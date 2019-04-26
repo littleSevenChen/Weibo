@@ -47,7 +47,7 @@ class SinaOauthViewController: UIViewController,WKNavigationDelegate {
     }
     @objc func outoFill(){
         // 1 js -- \是转义字符
-        
+       
     }
     /*
     // MARK: - Navigation
@@ -88,7 +88,11 @@ extension SinaOauthViewController{
                     let index = code.index(code.startIndex, offsetBy: 5)
                     let subStr = String(code.suffix(from: index))
                      print(subStr)
-                    loadData(code: subStr)
+                    getToken(code: subStr, success: {
+                        print("成功了")
+                    }) { (error) -> () in
+                        print(error)
+                    }
 //                    似成相识路中人
                 }
             }
@@ -97,7 +101,7 @@ extension SinaOauthViewController{
     }
     
     //MARK：获取网络请求来获取token
-    private func loadData(code:String){
+    private func getToken(code:String,success: @escaping ()->(),falure:@escaping (_ error:NSError)->()){
         let afn = AFHTTPSessionManager()
         afn.responseSerializer.acceptableContentTypes?.insert("text/plain")
         let params = [ "client_id": app_Key,
@@ -107,11 +111,16 @@ extension SinaOauthViewController{
                        "redirect_uri":redirect_Url
             
         ]
-//        https://api.weibo.com/oauth2/access_token
         afn.post("https://api.weibo.com/oauth2/access_token", parameters: params, success: { (_ , JSON) -> Void in
             
-            print("=====\(JSON ?? nil)")
-            
+//            print("=====\(JSON ?? nil)")
+            let dic = JSON as? [String:AnyObject]
+            if let dict = dic{
+                let account = SinaAccountModel(dict: dict)
+                self.personalInfo(accountModel: account, success: success, failure: falure)
+                 print(account)
+            }
+           
             /*
              "access_token" = "2.00cYTHKG0gkcu5a8f698925cEIKSwB";
              "expires_in" = 157679999;
@@ -123,5 +132,27 @@ extension SinaOauthViewController{
             print(error)
         }
     }
+    //MARK  获得token后，获取个人信息
+    private func personalInfo(accountModel:SinaAccountModel,success:@escaping ()->(),failure:(_ errot:NSError)->()){
+        if accountModel.access_token == nil || accountModel.uid == nil {
+            fatalError("access_token或者uid为nil")
+        }
+        let afn = AFHTTPSessionManager()
+        let  params = ["access_token": accountModel.access_token!,
+                       "uid":accountModel.uid!]
+        afn.get("https://api.weibo.com/2/users/show.json", parameters: params, progress: nil, success: { (_, JSON) in
+            if let dic = JSON as? [String:AnyObject]{
+                accountModel.screen_name = dic["screen_name"] as? String
+                accountModel.profile_image_url = dic["profile_image_url"] as? String
+                accountModel.saveInfo()
+                success()
+            }
+           
+        }) { (_, error) in
+            print(error)
+        }
+
+    }
+    
    
 }
