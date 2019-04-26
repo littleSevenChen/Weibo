@@ -7,10 +7,13 @@
 //
 
 import UIKit
-
+protocol SinaVisitorViewDelegate:NSObjectProtocol {
+    func didLoginMethod()
+    func didResgisterMethod()
+}
 class SinaVisitorView: UIView {
 
-    
+    weak var delegate:SinaVisitorViewDelegate?
     // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
@@ -27,7 +30,7 @@ class SinaVisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func staetAnimition() {
+    func startAnimition() {
         let animitaion = CABasicAnimation(keyPath: "transform.rotation")
         animitaion.toValue = Double.pi
         animitaion.repeatCount = MAXFLOAT
@@ -76,9 +79,7 @@ class SinaVisitorView: UIView {
         button.addTarget(self, action: #selector(registerMethod), for: UIControl.Event.touchUpInside)
         return button
     }()
-    @objc  func registerMethod(){
-        print("registerMethod")
-    }
+   
     //登录按钮
     private lazy var loginButton:UIButton = {
         let loginBtn = UIButton(type: UIButton.ButtonType.custom)
@@ -93,8 +94,14 @@ class SinaVisitorView: UIView {
 
         return loginBtn
     }()
+    
+    @objc  func registerMethod(){
+//        print("registerMethod")
+        delegate?.didResgisterMethod()
+    }
     @objc func loginMethod(){
-        print("loginMethod")
+//        print("loginMethod")
+        delegate?.didLoginMethod()
     }
 }
 

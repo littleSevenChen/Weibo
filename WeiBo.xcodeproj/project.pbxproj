@@ -24,6 +24,7 @@
 		7435B1A82272929000AB72F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7435B1972272929000AB72F5 /* Main.storyboard */; };
 		7435B1AA227292AD00AB72F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7435B1A9227292AD00AB72F5 /* Assets.xcassets */; };
 		74C267EF22729EAB00ACA132 /* SinaVisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C267EE22729EAB00ACA132 /* SinaVisitorView.swift */; };
+		74C267F12272B31500ACA132 /* SinaOauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C267F02272B31500ACA132 /* SinaOauthViewController.swift */; };
 		E18413A8953AE1A02BF3F7E5 /* Pods_WeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27537E402F71696AEB9CAD04 /* Pods_WeiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		7435B1982272929000AB72F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		7435B1A9227292AD00AB72F5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../../../../.Trash/Assets.xcassets; sourceTree = "<group>"; };
 		74C267EE22729EAB00ACA132 /* SinaVisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SinaVisitorView.swift; sourceTree = "<group>"; };
+		74C267F02272B31500ACA132 /* SinaOauthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaOauthViewController.swift; sourceTree = "<group>"; };
 		B6178FBC15196AAEED4DF5CE /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		EFC7868A7EBEC9C5440F788F /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -277,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				74C267EE22729EAB00ACA132 /* SinaVisitorView.swift */,
+				74C267F02272B31500ACA132 /* SinaOauthViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -539,6 +542,7 @@
 				743015832271BCA60089E9C5 /* AppDelegate.swift in Sources */,
 				7435B1A12272929000AB72F5 /* SinaMessageTableViewController.swift in Sources */,
 				7435B1A62272929000AB72F5 /* SinaTabBarController.swift in Sources */,
+				74C267F12272B31500ACA132 /* SinaOauthViewController.swift in Sources */,
 				7435B1A52272929000AB72F5 /* SinaBaseTableViewController.swift in Sources */,
 				7435B1A22272929000AB72F5 /* SinaFindTableViewController.swift in Sources */,
 				74C267EF22729EAB00ACA132 /* SinaVisitorView.swift in Sources */,

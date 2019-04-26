@@ -8,7 +8,18 @@
 
 import UIKit
 
-class SinaBaseTableViewController: UITableViewController {
+class SinaBaseTableViewController: UITableViewController,SinaVisitorViewDelegate{
+    @objc func didLoginMethod() {
+        print("didLoginMethod")
+    }
+    
+    @objc func didResgisterMethod() {
+        print("didResgisterMethod")
+        let oauthVC = SinaOauthViewController()
+        let nav = UINavigationController(rootViewController: oauthVC)
+        present(nav, animated: true, completion: nil)
+    }
+    
     var isLogin = false
     var vistor:SinaVisitorView?
     
@@ -17,7 +28,9 @@ class SinaBaseTableViewController: UITableViewController {
             super.loadView()
         }else{
             vistor = SinaVisitorView()
-            vistor?.staetAnimition()
+            vistor?.startAnimition()
+            vistor?.delegate = self
+            setupNav()
             view = vistor
         }
     }
@@ -25,13 +38,12 @@ class SinaBaseTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    // 设置nav
+    private func setupNav(){
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItem.Style.plain, target: self, action:#selector(didResgisterMethod))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItem.Style.plain, target: self, action: #selector(didLoginMethod))
+    }
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
