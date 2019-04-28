@@ -38,6 +38,14 @@ class SinaVisitorView: UIView {
         animitaion.isRemovedOnCompletion = false
         animationImageView.layer.add(animitaion, forKey: nil)
     }
+    func setupInfo(message:String,image:String?)  {
+        if let Oimage = image{
+            animationImageView.isHidden = true
+            houseImgeView.image = UIImage(named: Oimage)
+        }else{
+            animationImageView.isHidden = false
+        }
+    }
     
     private lazy var animationImageView:UIImageView = {
         let img = UIImageView()

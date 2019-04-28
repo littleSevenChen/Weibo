@@ -12,7 +12,9 @@ class SinaSettingTableViewController: SinaBaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if !isLogin{
+            vistor?.setupInfo(message: "登录后，最新、最热微博尽在掌握，不再会与实事潮流擦肩而过", image: "visitordiscover_image_message")
+        }
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

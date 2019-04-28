@@ -20,10 +20,14 @@ class SinaBaseTableViewController: UITableViewController,SinaVisitorViewDelegate
         present(nav, animated: true, completion: nil)
     }
     
+    
+    let account = SinaAccountModel.readInfo()
     var isLogin = false
     var vistor:SinaVisitorView?
     
     override func loadView() {
+//        isLogin = (SinaAccountViewModel.shareInstance.access_token == "" ) ? false : true
+        isLogin = SinaAccountViewModel.shareInstance.isLogin
         if isLogin {
             super.loadView()
         }else{

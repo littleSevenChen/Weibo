@@ -8,7 +8,9 @@
 
 import UIKit
 
-class SinaAccountModel: NSObject {
+class SinaAccountModel: NSObject,NSCoding {
+ 
+    
     //  access_token    string    用于调用access_token，接口获取授权后的access token。
    @objc var access_token: String?
     //expires_in    string    access_token的生命周期，单位是秒数。
@@ -46,7 +48,6 @@ class SinaAccountModel: NSObject {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        
         self.uid = aDecoder.decodeObject(forKey: "uid") as? String
         self.access_token = aDecoder.decodeObject(forKey: "access_token") as? String
         self.expires_date = aDecoder.decodeObject(forKey: "expires_date") as? NSDate
@@ -55,18 +56,38 @@ class SinaAccountModel: NSObject {
         
     }
     // 归档 -- 把对象转变成 二进制保存在硬盘里
-    func encodeWithCoder(aCoder: NSCoder) {
-        
+//    func encodeWithCoder(aCoder: NSCoder) {
+//        
+//        aCoder.encode(self.uid, forKey: "uid")
+//        aCoder.encode(self.access_token, forKey: "access_token")
+//        aCoder.encode(self.expires_date, forKey: "expires_date")
+//        aCoder.encode(self.screen_name, forKey: "screen_name")
+//        aCoder.encode(self.profile_image_url, forKey: "profile_image_url")
+//        
+//    }
+    func encode(with aCoder: NSCoder) {
         aCoder.encode(self.uid, forKey: "uid")
         aCoder.encode(self.access_token, forKey: "access_token")
         aCoder.encode(self.expires_date, forKey: "expires_date")
         aCoder.encode(self.screen_name, forKey: "screen_name")
         aCoder.encode(self.profile_image_url, forKey: "profile_image_url")
-        
     }
     func saveInfo() {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last!+"/weibo.info"
+        // 1 . 获取沙河路径
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
         
-        print("path = \(path)")
+        // 2. 拼接文件名字 -- 注意 path是可选项
+        let filePath = (path! as NSString).appendingPathComponent("21.info")
+        
+        // 3.保存
+        NSKeyedArchiver.archiveRootObject(self, toFile: filePath)
+    }
+    class func readInfo() ->SinaAccountModel? {
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last
+        
+        // 2. 拼接文件名字 -- 注意 path是可选项
+        let filePath = (path! as NSString).appendingPathComponent("21.info")
+        // 3 读取保存的对象
+        return  NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? SinaAccountModel
     }
 }
