@@ -21,5 +21,85 @@
             stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeiBo/UIs/Home/SinaOriginalView.swift"
+            timestampString = "578310736.461239"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "orginalViewModel"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeiBo/ViewModel/Home/SinaStatusViewModel.swift"
+            timestampString = "578310736.4613301"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "reposts_string"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "WeiBo/ViewModel/Login/SinaAccountViewModel.swift"
+            timestampString = "578310736.461897"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "personalInfo(accountModel:success:failure:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "WeiBo.SinaAccountViewModel.(personalInfo in _4C18E8E1846EA2EA4BF5CD6D37A31AC5)(accountModel: WeiBo.SinaAccountModel, success: () -&gt; (), failure: (__C.NSError) -&gt; ()) -&gt; ()"
+                  moduleName = "WeiBo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chen/Desktop/%E8%87%AA%E5%86%99%E6%A8%A1%E6%9D%BF/swift/SwiftWeiBo/WeiBo/ViewModel/Login/SinaAccountViewModel.swift"
+                  timestampString = "578310736.489926"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1556">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.NSURLSessionDataTask, Swift.Optional&lt;Any&gt;) -&gt; () in WeiBo.SinaAccountViewModel.(personalInfo in _4C18E8E1846EA2EA4BF5CD6D37A31AC5)(accountModel: WeiBo.SinaAccountModel, success: () -&gt; (), failure: (__C.NSError) -&gt; ()) -&gt; ()"
+                  moduleName = "WeiBo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/chen/Desktop/%E8%87%AA%E5%86%99%E6%A8%A1%E6%9D%BF/swift/SwiftWeiBo/WeiBo/ViewModel/Login/SinaAccountViewModel.swift"
+                  timestampString = "578310736.492363"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "215">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

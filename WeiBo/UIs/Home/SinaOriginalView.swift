@@ -8,10 +8,10 @@
 
 import UIKit
 import SDWebImage
-
+import SnapKit
 class SinaOriginalView: UIView {
-    
-    //定义一个属性
+    // 定义一个全局的约束来记录 底部约束
+    var picConstain: Constraint?    //定义一个属性
     var orginalViewModel: SinaStatusViewModel?{
         
         didSet{
@@ -20,14 +20,41 @@ class SinaOriginalView: UIView {
             //昵称赋值
             nameLabel.text = orginalViewModel?.model?.user?.screen_name
             //头像
-//            photoImageView.sd_setImageWithURL(orginalViewModel?.profile_URL)
             photoImageView.sd_setImage(with: orginalViewModel?.profile_URL as URL?, completed: nil)
             
             // 认证头像
             verifitiedImageView.image = orginalViewModel?.verifited_Image
             
             // 等级
-            levelImageView.image = orginalViewModel?.vipLevel_Imaeg
+            levelImageView.image = orginalViewModel?.vipLevel_Image
+//            timeLabel.text = orginalViewModel.
+            // 来源
+            sourceLabel.text = orginalViewModel?.source_string
+            
+            //
+            contentLabel.text = orginalViewModel?.model?.text
+            
+//            picConstain?.uninstall()
+//            //
+//            if orginalViewModel?.model?.pic_urls?.count ?? 0 > 0 {
+//                // 肯定有配图,然后显示配图
+//                
+//                self.snp_updateConstraints({ (make) -> Void in
+//                    picConstain = make.bottom.equalTo(pictureView.snp_bottom).constraint
+//                })
+//                
+//                pictureView.isHidden = false
+//                
+//                //传递给配图试图
+//                pictureView.pictures = orginalViewModel?.model?.pic_urls
+//                
+//            } else {
+//                // 没有配图,然后隐藏配图snp_remakeConstraints
+//                self.snp_updateConstraints({ (make) -> Void in
+//                    picConstain = make.bottom.equalTo(contentLabel.snp_bottom).constraint
+//                })
+//                pictureView.isHidden = true
+//            }
         }
         
     }
@@ -64,7 +91,6 @@ class SinaOriginalView: UIView {
         photoImageView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(self.snp_left).offset(SinaHomeMargin)
             make.top.equalTo(self.snp_top).offset(SinaHomeMargin)
-            
             make.width.equalTo(40)
             make.height.equalTo(40)
         }
@@ -106,13 +132,14 @@ class SinaOriginalView: UIView {
         
         // 内容的约束
         contentLabel.snp_makeConstraints { (make) -> Void in
-            
             make.left.equalTo(self.snp_left)
             make.top.equalTo(photoImageView.snp_bottom).offset(SinaHomeMargin)
-            
             make.width.equalTo(UIScreen.main.bounds.width)
+//            make.bottom.equalTo(self.snp_bottom)
             
-            
+        }
+        self.snp.makeConstraints { (make) in
+            make.bottom.equalTo(contentLabel.snp.bottom)
         }
     }
     
@@ -217,4 +244,6 @@ class SinaOriginalView: UIView {
         
         return label
     }()
+    ///  配图试图
+    lazy var pictureView: SinaPictureView = SinaPictureView()
 }

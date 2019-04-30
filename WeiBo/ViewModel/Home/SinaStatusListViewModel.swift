@@ -16,7 +16,7 @@ class SinaStatusListViewModel: NSObject {
         let afn = AFHTTPSessionManager()
         let params = ["access_token":SinaAccountViewModel.shareInstance.access_token]
         afn.get("https://api.weibo.com/2/statuses/home_timeline.json", parameters: params, progress: nil, success: { (_, JSON) in
-            print("JSON = \(String(describing: JSON))")
+//            print("JSON = \(String(describing: JSON))")
             if let dic = JSON as? [String:AnyObject]{
                 let statuses = dic["statuses"] as! [[String:AnyObject]]
                 for status in statuses{

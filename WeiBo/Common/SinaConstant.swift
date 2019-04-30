@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 
 /// 输出日志
 
@@ -49,3 +49,6 @@ let app_Secret = "2c57263dd1ace2df39dde73f74a13b70"
 let kNotificationEnter = "change"
 // 定义一个 首页的间距
 let SinaHomeMargin = 10
+//MARK:--系统的宽高
+let kUIScreenWidth = UIScreen.main.bounds.width
+let kUIScreenHeight = UIScreen.main.bounds.height

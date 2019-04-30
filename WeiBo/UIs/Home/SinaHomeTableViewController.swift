@@ -17,13 +17,18 @@ class SinaHomeTableViewController: SinaBaseTableViewController {
         super.viewDidLoad()
         if !isLogin{
             vistor?.setupInfo(message: "关注一些人，回这里看看有什么惊喜", image: nil)
+        }else{
+            getData()
+            //设置重用标示
+            tableView.register(SinaHomeTableViewCell.self, forCellReuseIdentifier: SinaHomeReuserIdentifer)
+            
+            
+            // 固定的高度 -- 直接告诉系统,cell高度都是 200
+            tableView.rowHeight = 200
+            // 自动计算告诉
+            tableView.rowHeight = UITableView.automaticDimension
         }
-        getData()
-        //设置重用标示
-        tableView.register(SinaHomeTableViewCell.self, forCellReuseIdentifier: SinaHomeReuserIdentifer)
-        
-        // 固定的高度 -- 直接告诉系统,cell高度都是 200
-        tableView.rowHeight = 200
+       
         // Uncomment theSinaHomeTableViewControllerserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -53,10 +58,10 @@ class SinaHomeTableViewController: SinaBaseTableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: SinaHomeReuserIdentifer, for: indexPath) as!SinaHomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: SinaHomeReuserIdentifer, for: indexPath) as! SinaHomeTableViewCell
+        
         cell.statusViewModel = viewModel.list[indexPath.row]
 
-        // Configure the cell...
 
         return cell
     }

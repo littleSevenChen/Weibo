@@ -45,8 +45,7 @@ class SinaOauthViewController: UIViewController,WKNavigationDelegate {
         navigationController?.dismiss(animated: true, completion:nil)
     }
     @objc func outoFill(){
-        // 1 js -- \是转义字符
-      
+
     }
     /*
     // MARK: - Navigation

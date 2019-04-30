@@ -24,7 +24,7 @@ var bottomSnapKitConstraint: Constraint?
         super.viewDidAppear(animated)
         
         // 更新约束
-        //        bottomConstraint?.constant = -(UIScreen.mainScreen().bounds.height - 150)
+//                bottomConstraint?.constant = -(UIScreen.mainScreen().bounds.height - 150)
         
         bottomSnapKitConstraint?.updateOffset(amount: -(UIScreen.main.bounds.height - 150))
         // 第二个问题,动画效果
@@ -32,8 +32,8 @@ var bottomSnapKitConstraint: Constraint?
         // initialSpringVelocity :  则表示初始的速度，数值越大一开始移动越快，初始速度取值较高而时间较短时，会出现反弹情况
         // OC里枚举可以写 nil, Swift 可以用 []
 
-        UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: [], animations: {
-            
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.9, initialSpringVelocity: 0.5, options: [], animations: {
+            self.view.layoutIfNeeded()
         }) { (Bool)->Void in
             NotificationCenter.default.post(name: NSNotification.Name(rawValue: kNotificationEnter), object: nil)
     

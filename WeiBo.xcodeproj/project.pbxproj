@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -36,6 +36,10 @@
 		74C6254F2275813A000FD902 /* SinaStatusListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6254E2275813A000FD902 /* SinaStatusListViewModel.swift */; };
 		74C62551227582C9000FD902 /* SinaHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C62550227582C9000FD902 /* SinaHomeTableViewCell.swift */; };
 		74C6255322758316000FD902 /* SinaOriginalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6255222758316000FD902 /* SinaOriginalView.swift */; };
+		74C62555227587D2000FD902 /* SinaFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C62554227587D2000FD902 /* SinaFooterView.swift */; };
+		74C625572275897E000FD902 /* SinaPictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C625562275897E000FD902 /* SinaPictureModel.swift */; };
+		74C6255922758A4D000FD902 /* SinaRetweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6255822758A4D000FD902 /* SinaRetweetView.swift */; };
+		74C6255B22759137000FD902 /* SinaPictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C6255A22759137000FD902 /* SinaPictureView.swift */; };
 		E18413A8953AE1A02BF3F7E5 /* Pods_WeiBo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27537E402F71696AEB9CAD04 /* Pods_WeiBo.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +97,10 @@
 		74C6254E2275813A000FD902 /* SinaStatusListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaStatusListViewModel.swift; sourceTree = "<group>"; };
 		74C62550227582C9000FD902 /* SinaHomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaHomeTableViewCell.swift; sourceTree = "<group>"; };
 		74C6255222758316000FD902 /* SinaOriginalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaOriginalView.swift; sourceTree = "<group>"; };
+		74C62554227587D2000FD902 /* SinaFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaFooterView.swift; sourceTree = "<group>"; };
+		74C625562275897E000FD902 /* SinaPictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaPictureModel.swift; sourceTree = "<group>"; };
+		74C6255822758A4D000FD902 /* SinaRetweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaRetweetView.swift; sourceTree = "<group>"; };
+		74C6255A22759137000FD902 /* SinaPictureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinaPictureView.swift; sourceTree = "<group>"; };
 		B6178FBC15196AAEED4DF5CE /* Pods-WeiBo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.debug.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.debug.xcconfig"; sourceTree = "<group>"; };
 		EFC7868A7EBEC9C5440F788F /* Pods-WeiBo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeiBo.release.xcconfig"; path = "Target Support Files/Pods-WeiBo/Pods-WeiBo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -167,9 +175,9 @@
 			children = (
 				7435B1942272929000AB72F5 /* Base.lproj */,
 				7435B1902272929000AB72F5 /* Common */,
-				7435B17F2272929000AB72F5 /* Model */,
 				7435B1852272929000AB72F5 /* Third */,
 				7435B1862272929000AB72F5 /* UIs */,
+				7435B17F2272929000AB72F5 /* Model */,
 				7435B1992272929000AB72F5 /* ViewModel */,
 				743015822271BCA60089E9C5 /* AppDelegate.swift */,
 				743015842271BCA60089E9C5 /* ViewController.swift */,
@@ -216,6 +224,7 @@
 			children = (
 				7442859C2275785E00AF925B /* SinaStatusModel.swift */,
 				74C6254C22758081000FD902 /* SinaUserModel.swift */,
+				74C625562275897E000FD902 /* SinaPictureModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -271,9 +280,12 @@
 		7435B1872272929000AB72F5 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7435B1882272929000AB72F5 /* SinaHomeTableViewController.swift */,
 				74C62550227582C9000FD902 /* SinaHomeTableViewCell.swift */,
+				74C62554227587D2000FD902 /* SinaFooterView.swift */,
+				74C6255822758A4D000FD902 /* SinaRetweetView.swift */,
+				74C6255A22759137000FD902 /* SinaPictureView.swift */,
 				74C6255222758316000FD902 /* SinaOriginalView.swift */,
+				7435B1882272929000AB72F5 /* SinaHomeTableViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -520,22 +532,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-WeiBo/Pods-WeiBo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -577,19 +578,23 @@
 				74C6254F2275813A000FD902 /* SinaStatusListViewModel.swift in Sources */,
 				74C6255322758316000FD902 /* SinaOriginalView.swift in Sources */,
 				7435B1A12272929000AB72F5 /* SinaMessageTableViewController.swift in Sources */,
+				74C62555227587D2000FD902 /* SinaFooterView.swift in Sources */,
 				7442859922754F9900AF925B /* SinaConstant.swift in Sources */,
 				74428597227544BF00AF925B /* SinaNewFeatureCollectionViewController.swift in Sources */,
+				74C625572275897E000FD902 /* SinaPictureModel.swift in Sources */,
 				7442859D2275785E00AF925B /* SinaStatusModel.swift in Sources */,
 				7435B1A62272929000AB72F5 /* SinaTabBarController.swift in Sources */,
 				74C267F12272B31500ACA132 /* SinaOauthViewController.swift in Sources */,
 				74C6254B2275800A000FD902 /* SinaStatusViewModel.swift in Sources */,
 				74C62551227582C9000FD902 /* SinaHomeTableViewCell.swift in Sources */,
+				74C6255922758A4D000FD902 /* SinaRetweetView.swift in Sources */,
 				7435B1A52272929000AB72F5 /* SinaBaseTableViewController.swift in Sources */,
 				74C267F522730DCA00ACA132 /* SinaAccountViewModel.swift in Sources */,
 				7435B1A22272929000AB72F5 /* SinaFindTableViewController.swift in Sources */,
 				74C267EF22729EAB00ACA132 /* SinaVisitorView.swift in Sources */,
 				7435B1A02272929000AB72F5 /* SinaHomeTableViewController.swift in Sources */,
 				7435B1A42272929000AB72F5 /* SinaTabBar.swift in Sources */,
+				74C6255B22759137000FD902 /* SinaPictureView.swift in Sources */,
 				74C267F32272FC5300ACA132 /* SinaAccountModel.swift in Sources */,
 				7435B1A32272929000AB72F5 /* SinaSettingTableViewController.swift in Sources */,
 				74C6254D22758081000FD902 /* SinaUserModel.swift in Sources */,
@@ -788,6 +793,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8PFJQR845;
 				INFOPLIST_FILE = WeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -808,6 +814,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F8PFJQR845;
 				INFOPLIST_FILE = WeiBo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

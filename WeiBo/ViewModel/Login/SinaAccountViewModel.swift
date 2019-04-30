@@ -72,6 +72,7 @@ class SinaAccountViewModel: NSObject {
             }
             
         }) { (_, error) in
+            print(error.localizedDescription)
             print(error)
         }
         

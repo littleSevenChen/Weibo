@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.makeKeyAndVisible()
         window?.rootViewController = SinaAccountViewModel.shareInstance.isLogin ? (retureDefaultViewController()) : (SinaTabBarController())
+//        window?.rootViewController = SinaTabBarController()
+        
         NotificationCenter.default.addObserver(self, selector: #selector(changeVc(noti:)), name: NSNotification.Name(rawValue: kNotificationEnter), object: nil)
         setupAppereance()
         return true
@@ -45,7 +47,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // 检测版本的方法
     private func checkVerson() -> Bool {
         
-        return true
+        return false
         
     }
     deinit{
