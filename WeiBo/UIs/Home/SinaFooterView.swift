@@ -77,11 +77,6 @@ class SinaFooterView: UIView {
             make.right.equalTo(goodButton.snp_left)
         }
         
-        
-        
-        
-        
-        
         //MARK:--添加2条竖线
         let line1 = getLine()
         let line2 = getLine()

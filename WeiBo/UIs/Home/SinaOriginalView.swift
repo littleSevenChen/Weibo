@@ -27,34 +27,34 @@ class SinaOriginalView: UIView {
             
             // 等级
             levelImageView.image = orginalViewModel?.vipLevel_Image
-//            timeLabel.text = orginalViewModel.
+            //            timeLabel.text = orginalViewModel.
             // 来源
             sourceLabel.text = orginalViewModel?.source_string
             
             //
             contentLabel.text = orginalViewModel?.model?.text
             
-//            picConstain?.uninstall()
-//            //
-//            if orginalViewModel?.model?.pic_urls?.count ?? 0 > 0 {
-//                // 肯定有配图,然后显示配图
-//                
-//                self.snp_updateConstraints({ (make) -> Void in
-//                    picConstain = make.bottom.equalTo(pictureView.snp_bottom).constraint
-//                })
-//                
-//                pictureView.isHidden = false
-//                
-//                //传递给配图试图
-//                pictureView.pictures = orginalViewModel?.model?.pic_urls
-//                
-//            } else {
-//                // 没有配图,然后隐藏配图snp_remakeConstraints
-//                self.snp_updateConstraints({ (make) -> Void in
-//                    picConstain = make.bottom.equalTo(contentLabel.snp_bottom).constraint
-//                })
-//                pictureView.isHidden = true
-//            }
+            //            picConstain?.uninstall()
+            //            //
+            //            if orginalViewModel?.model?.pic_urls?.count ?? 0 > 0 {
+            //                // 肯定有配图,然后显示配图
+            //
+            //                self.snp_updateConstraints({ (make) -> Void in
+            //                    picConstain = make.bottom.equalTo(pictureView.snp_bottom).constraint
+            //                })
+            //
+            //                pictureView.isHidden = false
+            //
+            //                //传递给配图试图
+            //                pictureView.pictures = orginalViewModel?.model?.pic_urls
+            //
+            //            } else {
+            //                // 没有配图,然后隐藏配图snp_remakeConstraints
+            //                self.snp_updateConstraints({ (make) -> Void in
+            //                    picConstain = make.bottom.equalTo(contentLabel.snp_bottom).constraint
+            //                })
+            //                pictureView.isHidden = true
+            //            }
         }
         
     }
@@ -85,8 +85,7 @@ class SinaOriginalView: UIView {
         addSubview(contentLabel)
         
         // 添加约束
-        
-        
+
         // 头像的约束 距离顶部和左边有一个间距 10 ,固定宽高 40 40
         photoImageView.snp_makeConstraints { (make) -> Void in
             make.left.equalTo(self.snp_left).offset(SinaHomeMargin)
@@ -135,7 +134,7 @@ class SinaOriginalView: UIView {
             make.left.equalTo(self.snp_left)
             make.top.equalTo(photoImageView.snp_bottom).offset(SinaHomeMargin)
             make.width.equalTo(UIScreen.main.bounds.width)
-//            make.bottom.equalTo(self.snp_bottom)
+            //            make.bottom.equalTo(self.snp_bottom)
             
         }
         self.snp.makeConstraints { (make) in

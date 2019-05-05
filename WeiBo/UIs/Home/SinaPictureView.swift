@@ -92,20 +92,13 @@ class SinaPictureView: UICollectionView ,UICollectionViewDataSource{
         /*
          计算配图的宽高
          高度是图片的高度
-         
-         
-         
          一张图片给他一个固定的宽高
-         
          4张图片的时候返回一个 2*2的吧
-         
          2,3 一个图片的高度,宽度是一个屏幕的宽度
          5,6, 2*图片的高度+间距,宽度 一个屏幕的宽度
          7,8,9 3*图片的高度+ 2*间距,宽度 一个屏幕的宽度
          
          */
-        
-        
         let count = pictures?.count
         
         if count == 1 {
@@ -131,8 +124,6 @@ class SinaPictureView: UICollectionView ,UICollectionViewDataSource{
             let heigth = CGFloat(row) * (itemWidth) + (CGFloat(row) - 1) * itemMargin
             return CGSize(width: CGFloat( kUIScreenWidth - 2 * CGFloat( SinaHomeMargin)), height: heigth)
         }
-        
-        return CGSize.zero
         
     }
     

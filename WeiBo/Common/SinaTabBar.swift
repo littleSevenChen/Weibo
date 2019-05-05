@@ -33,7 +33,6 @@ class SinaTabBar: UITabBar {
                 if index == 2{
                     index = index+1
                 }
-//                print("index\(index)")
             }
             
         }

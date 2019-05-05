@@ -29,11 +29,6 @@ class SinaHomeTableViewController: SinaBaseTableViewController {
             tableView.rowHeight = UITableView.automaticDimension
         }
        
-        // Uncomment theSinaHomeTableViewControllerserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     private func getData(){
