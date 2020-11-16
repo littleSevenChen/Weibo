@@ -57,9 +57,6 @@ class SinaHomeTableViewController: SinaBaseTableViewController {
         
         cell.statusViewModel = viewModel.list[indexPath.row]
 
-        
-        
-        
 
         return cell
     }
