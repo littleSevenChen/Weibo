@@ -54,9 +54,7 @@ class SinaHomeTableViewController: SinaBaseTableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: SinaHomeReuserIdentifer, for: indexPath) as! SinaHomeTableViewCell
-        
-        cell.statusViewModel = viewModel.list[indexPath.row]
-
+        cell.statusViewModel = viewModel.list[indexPath.row];
 
         return cell
     }
